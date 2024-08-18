@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/permissions_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:just_audio/just_audio.dart';
 import 'teacher_precy_model.dart';
 export 'teacher_precy_model.dart';
 
@@ -26,6 +27,14 @@ class _TeacherPrecyWidgetState extends State<TeacherPrecyWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await requestPermission(microphonePermission);
+      _model.soundPlayer ??= AudioPlayer();
+      if (_model.soundPlayer!.playing) {
+        await _model.soundPlayer!.stop();
+      }
+      _model.soundPlayer!.setVolume(1.0);
+      _model.soundPlayer!
+          .setUrl('https://aitek.site/aanp/teacher-precy.mp3')
+          .then((_) => _model.soundPlayer!.play());
     });
   }
 
@@ -83,6 +92,7 @@ class _TeacherPrecyWidgetState extends State<TeacherPrecyWidget> {
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             context.safePop();
+                            _model.soundPlayer?.stop();
                           },
                           child: Icon(
                             Icons.arrow_back_ios_new,

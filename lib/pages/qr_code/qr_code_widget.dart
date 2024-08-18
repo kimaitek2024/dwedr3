@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:share_plus/share_plus.dart';
 import 'qr_code_model.dart';
 export 'qr_code_model.dart';
 
@@ -168,7 +167,9 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                               20.0, 20.0, 20.0, 20.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => BarcodeWidget(
-                              data: '+63$currentPhoneNumber',
+                              data: valueOrDefault(
+                                      currentUserDocument?.idNumber, 0)
+                                  .toString(),
                               barcode: Barcode.qrCode(),
                               width: 280.0,
                               height: 280.0,
@@ -196,44 +197,36 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Builder(
-                        builder: (context) => FFButtonWidget(
-                          onPressed: () async {
-                            await Share.share(
-                              currentPhoneNumber,
-                              sharePositionOrigin:
-                                  getWidgetBoundingBox(context),
-                            );
-                          },
-                          text: 'SCAN QR CODE',
-                          options: FFButtonOptions(
-                            width: 300.0,
-                            height: 55.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleSmallFamily,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleSmallFamily),
-                                ),
-                            elevation: 8.0,
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
+                      FFButtonWidget(
+                        onPressed: () {
+                          print('Button pressed ...');
+                        },
+                        text: 'SCAN QR CODE',
+                        options: FFButtonOptions(
+                          width: 300.0,
+                          height: 55.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
+                              ),
+                          elevation: 8.0,
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            width: 1.0,
                           ),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ],

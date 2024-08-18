@@ -591,7 +591,7 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                                                     width:
                                                                         300.0,
                                                                     height:
-                                                                        169.0,
+                                                                        175.0,
                                                                     fit: BoxFit
                                                                         .cover,
                                                                   ),
