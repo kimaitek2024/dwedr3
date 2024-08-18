@@ -140,6 +140,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? const NavBarPage(initialPage: 'EditProfile')
               : const EditProfileWidget(),
+        ),
+        FFRoute(
+          name: 'notifications',
+          path: '/notifications',
+          builder: (context, params) => const NotificationsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
