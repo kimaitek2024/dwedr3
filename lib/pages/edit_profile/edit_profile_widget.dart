@@ -61,16 +61,20 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
-          title: Text(
-            'Edit Profile',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
-                  useGoogleFonts: GoogleFonts.asMap().containsKey(
-                      FlutterFlowTheme.of(context).headlineMediumFamily),
-                ),
+          title: Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+            child: Text(
+              'Edit Profile',
+              style: FlutterFlowTheme.of(context).headlineMedium.override(
+                    fontFamily:
+                        FlutterFlowTheme.of(context).headlineMediumFamily,
+                    color: FlutterFlowTheme.of(context).primaryText,
+                    fontSize: 22.0,
+                    letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).headlineMediumFamily),
+                  ),
+            ),
           ),
           actions: const [],
           centerTitle: false,
@@ -117,8 +121,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   ),
                                 ),
                                 child: Container(
-                                  width: 150.0,
-                                  height: 150.0,
+                                  width: 130.0,
+                                  height: 130.0,
                                   decoration: BoxDecoration(
                                     color: const Color(0xFFB3AEDD),
                                     borderRadius: const BorderRadius.only(
@@ -839,7 +843,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             },
                             text: 'Cancel',
                             options: FFButtonOptions(
-                              height: 44.0,
+                              width: 150.0,
+                              height: 50.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
                               iconPadding: const EdgeInsetsDirectional.fromSTEB(
@@ -849,7 +854,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF15161E),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
@@ -857,8 +863,9 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                         .containsKey('Plus Jakarta Sans'),
                                   ),
                               elevation: 0.0,
-                              borderSide: const BorderSide(
-                                color: Color(0xFFE5E7EB),
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
@@ -906,17 +913,19 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             },
                             text: 'Save Changes',
                             options: FFButtonOptions(
-                              height: 51.0,
+                              width: 150.0,
+                              height: 52.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
                               iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: const Color(0xFF6F61EF),
+                              color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
