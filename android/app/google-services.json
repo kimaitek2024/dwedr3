@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "723113808411",
+    "firebase_url": "https://a-a-n-p-school-p2tmql-default-rtdb.firebaseio.com",
+    "project_id": "a-a-n-p-school-p2tmql",
+    "storage_bucket": "a-a-n-p-school-p2tmql.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723113808411:android:30f1a863d8d9f6ba13debe",
+        "android_client_info": {
+          "package_name": "com.myacademy.school"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723113808411-3k84qi2scu1qaqhtcte1thisvc8t9d46.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myacademy.school",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "723113808411-e20cbnhn8epd2a0v1so8oaphncnig2sc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7ttOZTyESV3E6hkrS3W7NIL3-Ok-SL58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723113808411-e20cbnhn8epd2a0v1so8oaphncnig2sc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "723113808411-u891349gemunbc3q8v2q54j1jqofdft2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.myacademy.school"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
