@@ -141,70 +141,79 @@ class _HomepageWidgetState extends State<HomepageWidget>
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
           title: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                  child: Container(
-                    decoration: const BoxDecoration(),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.asset(
-                        'assets/images/Untitled_design_(1)_(1).png',
-                        width: 60.0,
-                        height: 56.0,
-                        fit: BoxFit.contain,
-                        alignment: const Alignment(0.0, 0.0),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                  child: FFButtonWidget(
-                    onPressed: () async {
-                      context.pushNamed('TeacherPrecy');
-                    },
-                    text: 'Teacher Presy',
-                    icon: const Icon(
-                      Icons.military_tech_outlined,
-                      size: 28.0,
-                    ),
-                    options: FFButtonOptions(
-                      height: 38.0,
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+            child: Container(
+              decoration: const BoxDecoration(),
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primaryBackground,
-                      textStyle: FlutterFlowTheme.of(context)
-                          .titleSmall
-                          .override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).titleSmallFamily,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).titleSmallFamily),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                      child: Container(
+                        decoration: const BoxDecoration(),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.asset(
+                            'assets/images/Untitled_design_(1)_(1).png',
+                            width: 60.0,
+                            height: 46.0,
+                            fit: BoxFit.contain,
+                            alignment: const Alignment(0.0, 0.0),
                           ),
-                      elevation: 3.0,
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        width: 1.0,
+                        ),
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
                     ),
-                  ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 4.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed('TeacherPrecy');
+                        },
+                        text: 'Teacher Presy',
+                        icon: const Icon(
+                          Icons.military_tech_outlined,
+                          size: 28.0,
+                        ),
+                        options: FFButtonOptions(
+                          height: 38.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
+                              ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
           actions: const [],
           centerTitle: false,
-          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -212,6 +221,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
             primary: false,
             child: Column(
               mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
@@ -277,7 +287,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   await launchURL(
-                                      'https://www.facebook.com/AcademyRadio/videos/1027054585624748');
+                                      'https://www.facebook.com/AcademyRadio');
                                 },
                                 text: 'Listen Live to Academy Radio',
                                 icon: Icon(
