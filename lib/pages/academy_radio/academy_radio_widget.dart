@@ -43,9 +43,7 @@ class _AcademyRadioWidgetState extends State<AcademyRadioWidget> {
             Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: MediaQuery.sizeOf(context).height * 1.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
-              ),
+              decoration: const BoxDecoration(),
               child: FlutterFlowWebView(
                 content:
                     'https://altair.streamerr.co/public/8072?fbclid=IwZXh0bgNhZW0CMTAAAR0PFu9_cz_8GJ4vka4vk9hDzc339wDaieSG90Ig_-UNnjXmufvErRpMpKk_aem_EHDswVM2gNS7u9I-y8tLsw',
@@ -64,9 +62,7 @@ class _AcademyRadioWidgetState extends State<AcademyRadioWidget> {
                   Container(
                     width: 132.0,
                     height: 39.0,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
+                    decoration: const BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
