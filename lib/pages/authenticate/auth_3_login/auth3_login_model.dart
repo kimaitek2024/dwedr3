@@ -1,5 +1,5 @@
-import '/components/logoacademy/logoacademy_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/pages/components/logoacademy/logoacademy_widget.dart';
 import 'auth3_login_widget.dart' show Auth3LoginWidget;
 import 'package:flutter/material.dart';
 

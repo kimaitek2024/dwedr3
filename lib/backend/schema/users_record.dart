@@ -85,6 +85,11 @@ class UsersRecord extends FirestoreRecord {
   int get unreadNotiff => _unreadNotiff ?? 0;
   bool hasUnreadNotiff() => _unreadNotiff != null;
 
+  // "updated" field.
+  bool? _updated;
+  bool get updated => _updated ?? false;
+  bool hasUpdated() => _updated != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -100,6 +105,7 @@ class UsersRecord extends FirestoreRecord {
     _subscribed = snapshotData['subscribed'] as bool?;
     _gradelevel = snapshotData['gradelevel'] as String?;
     _unreadNotiff = castToType<int>(snapshotData['unread_notiff']);
+    _updated = snapshotData['updated'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -150,6 +156,7 @@ Map<String, dynamic> createUsersRecordData({
   bool? subscribed,
   String? gradelevel,
   int? unreadNotiff,
+  bool? updated,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -167,6 +174,7 @@ Map<String, dynamic> createUsersRecordData({
       'subscribed': subscribed,
       'gradelevel': gradelevel,
       'unread_notiff': unreadNotiff,
+      'updated': updated,
     }.withoutNulls,
   );
 
@@ -191,7 +199,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.address == e2?.address &&
         e1?.subscribed == e2?.subscribed &&
         e1?.gradelevel == e2?.gradelevel &&
-        e1?.unreadNotiff == e2?.unreadNotiff;
+        e1?.unreadNotiff == e2?.unreadNotiff &&
+        e1?.updated == e2?.updated;
   }
 
   @override
@@ -209,7 +218,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.address,
         e?.subscribed,
         e?.gradelevel,
-        e?.unreadNotiff
+        e?.unreadNotiff,
+        e?.updated
       ]);
 
   @override

@@ -896,6 +896,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 address: _model.fullNameTextController.text,
                                 gradelevel:
                                     _model.gradeLevelTextController.text,
+                                updated: true,
                               ));
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(

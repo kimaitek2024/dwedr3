@@ -1,10 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/logoacademy/logoacademy_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/components/logoacademy/logoacademy_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -180,13 +180,14 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Create an account',
+                                        'Create AANP Account',
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmallFamily,
+                                              fontSize: 32.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
@@ -871,8 +872,10 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
                                                                     .titleSmallFamily),
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
                                                 width: 1.0,
                                               ),
                                               borderRadius:

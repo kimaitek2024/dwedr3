@@ -1,9 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/components/logoacademy/logoacademy_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/components/logoacademy/logoacademy_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -172,6 +172,7 @@ class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmallFamily,
+                                              fontSize: 34.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
@@ -462,14 +463,14 @@ class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
                                             text: 'Login',
                                             options: FFButtonOptions(
                                               width: 200.0,
-                                              height: 50.0,
+                                              height: 56.0,
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primary,
+                                                      .secondaryBackground,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -478,7 +479,10 @@ class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .titleSmallFamily,
-                                                        color: Colors.white,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
@@ -487,9 +491,11 @@ class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
                                                                         context)
                                                                     .titleSmallFamily),
                                                       ),
-                                              elevation: 3.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
+                                              elevation: 8.0,
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
                                                 width: 1.0,
                                               ),
                                               borderRadius:

@@ -147,11 +147,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const TeacherPrecyWidget(),
         ),
         FFRoute(
-          name: 'TeacherPrecyCopy',
-          path: '/teacherPrecyCopy',
-          builder: (context, params) => const TeacherPrecyCopyWidget(),
-        ),
-        FFRoute(
           name: 'academyRadio',
           path: '/academyRadio',
           builder: (context, params) => const AcademyRadioWidget(),
@@ -162,9 +157,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const QrScannerWidget(),
         ),
         FFRoute(
-          name: 'List23ActivityResponsive',
-          path: '/list23ActivityResponsive',
-          builder: (context, params) => const List23ActivityResponsiveWidget(),
+          name: 'successUpdate',
+          path: '/successUpdate',
+          builder: (context, params) => const SuccessUpdateWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

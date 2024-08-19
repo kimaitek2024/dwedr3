@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'homepage_model.dart';
 export 'homepage_model.dart';
@@ -100,83 +101,96 @@ class _HomepageWidgetState extends State<HomepageWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          title: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
-            child: Container(
-              decoration: const BoxDecoration(),
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                      child: Container(
-                        decoration: const BoxDecoration(),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.asset(
-                            'assets/images/Untitled_design_(1)_(1).png',
-                            width: 60.0,
-                            height: 46.0,
-                            fit: BoxFit.contain,
-                            alignment: const Alignment(0.0, 0.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 4.0),
-                      child: FFButtonWidget(
-                        onPressed: () async {
-                          context.pushNamed('TeacherPrecy');
-                        },
-                        text: 'Teacher Presy',
-                        icon: const Icon(
-                          Icons.military_tech_outlined,
-                          size: 28.0,
-                        ),
-                        options: FFButtonOptions(
-                          height: 38.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                          textStyle: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .titleSmallFamily,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .titleSmallFamily),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(75.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            automaticallyImplyLeading: false,
+            title: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+              child: Container(
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                        child: Container(
+                          width: 76.0,
+                          height: 76.0,
+                          decoration: const BoxDecoration(),
+                          child: Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  4.0, 4.0, 4.0, 4.0),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/Untitled_design_(1)_(1).png',
+                                  width: 75.0,
+                                  height: 75.0,
+                                  fit: BoxFit.contain,
+                                  alignment: const Alignment(0.0, 0.0),
+                                ),
                               ),
-                          elevation: 3.0,
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            width: 1.0,
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            context.pushNamed('academyRadio');
+                          },
+                          text: 'Academy Radio',
+                          options: FFButtonOptions(
+                            width: 160.0,
+                            height: 38.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
+                                ),
+                            elevation: 3.0,
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
+            actions: const [],
+            centerTitle: false,
           ),
-          actions: const [],
-          centerTitle: false,
         ),
         body: SafeArea(
           top: true,
@@ -258,11 +272,11 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                         0.0, 45.0, 0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        context.pushNamed('academyRadio');
+                                        context.pushNamed('TeacherPrecy');
                                       },
-                                      text: 'Listen Live to Academy Radio',
-                                      icon: Icon(
-                                        Icons.rss_feed_sharp,
+                                      text: 'Live Tutorial  from Teacher Precy',
+                                      icon: FaIcon(
+                                        FontAwesomeIcons.chalkboardTeacher,
                                         color: FlutterFlowTheme.of(context)
                                             .warning,
                                         size: 28.0,
@@ -410,7 +424,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                             child: Image.network(
                                               'https://picsum.photos/seed/188/600',
                                               width: 300.0,
-                                              height: 200.0,
+                                              height: 212.0,
                                               fit: BoxFit.cover,
                                             ),
                                           ),
