@@ -843,8 +843,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                         Align(
                           alignment: const AlignmentDirectional(0.0, 0.05),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.safePop();
                             },
                             text: 'Cancel',
                             options: FFButtonOptions(
@@ -897,21 +897,9 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 gradelevel:
                                     _model.gradeLevelTextController.text,
                                 updated: true,
+                                email: '',
+                                displayName: _model.yourNameTextController.text,
                               ));
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'Profile Updated',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
                               await Future.delayed(
                                   const Duration(milliseconds: 3000));
 
