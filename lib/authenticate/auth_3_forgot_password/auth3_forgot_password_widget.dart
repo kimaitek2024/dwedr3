@@ -1,5 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/components/logopanyero/logopanyero_widget.dart';
+import '/components/logoacademy/logoacademy_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -148,9 +148,9 @@ class _Auth3ForgotPasswordWidgetState extends State<Auth3ForgotPasswordWidget>
                                 ),
                                 alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: wrapWithModel(
-                                  model: _model.logopanyeroModel,
+                                  model: _model.logoacademyModel,
                                   updateCallback: () => setState(() {}),
-                                  child: const LogopanyeroWidget(),
+                                  child: const LogoacademyWidget(),
                                 ),
                               ),
                               Align(

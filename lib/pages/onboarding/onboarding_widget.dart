@@ -234,7 +234,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             44.0, 8.0, 44.0, 0.0),
                         child: Text(
-                          'AANP App! Access or create your account below, and get started on your journey!',
+                          'Advanced Academy of Northern \nPhilippines Inc. School year 2024-2025!',
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context)
                               .labelMedium
@@ -293,7 +293,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                       .containsKey(FlutterFlowTheme.of(context)
                                           .bodyLargeFamily),
                                 ),
-                            elevation: 0.0,
+                            elevation: 4.0,
                             borderSide: const BorderSide(
                               color: Color(0x63333333),
                               width: 2.0,
@@ -334,7 +334,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                       .containsKey(FlutterFlowTheme.of(context)
                                           .titleSmallFamily),
                                 ),
-                            elevation: 3.0,
+                            elevation: 4.0,
                             borderSide: const BorderSide(
                               color: Color(0x87333333),
                               width: 1.0,

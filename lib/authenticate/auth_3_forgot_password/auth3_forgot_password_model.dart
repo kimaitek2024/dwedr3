@@ -1,4 +1,4 @@
-import '/components/logopanyero/logopanyero_widget.dart';
+import '/components/logoacademy/logoacademy_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'auth3_forgot_password_widget.dart' show Auth3ForgotPasswordWidget;
 import 'package:flutter/material.dart';
@@ -8,8 +8,8 @@ class Auth3ForgotPasswordModel
     extends FlutterFlowModel<Auth3ForgotPasswordWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Model for logopanyero component.
-  late LogopanyeroModel logopanyeroModel;
+  // Model for logoacademy component.
+  late LogoacademyModel logoacademyModel;
   // State field(s) for email widget.
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
@@ -18,12 +18,12 @@ class Auth3ForgotPasswordModel
 
   @override
   void initState(BuildContext context) {
-    logopanyeroModel = createModel(context, () => LogopanyeroModel());
+    logoacademyModel = createModel(context, () => LogoacademyModel());
   }
 
   @override
   void dispose() {
-    logopanyeroModel.dispose();
+    logoacademyModel.dispose();
     emailFocusNode?.dispose();
     emailTextController?.dispose();
   }

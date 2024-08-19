@@ -250,7 +250,7 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: AuthUserStreamWidget(
                                             builder: (context) => Text(
-                                              '$currentUserDisplayName, has arrived at Advanced Academy of Northern Philippines.',
+                                              '$currentUserDisplayName, has arrived at Advanced Academy of Northern Philippines Inc.',
                                               maxLines: 2,
                                               style:
                                                   FlutterFlowTheme.of(context)

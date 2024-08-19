@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/logopanyero/logopanyero_widget.dart';
+import '/components/logoacademy/logoacademy_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -163,9 +163,9 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 25.0, 0.0, 0.0),
                                   child: wrapWithModel(
-                                    model: _model.logopanyeroModel,
+                                    model: _model.logoacademyModel,
                                     updateCallback: () => setState(() {}),
-                                    child: const LogopanyeroWidget(),
+                                    child: const LogoacademyWidget(),
                                   ),
                                 ),
                               ),

@@ -4,25 +4,25 @@ import '/flutter_flow/permissions_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:just_audio/just_audio.dart';
-import 'teacher_precy_model.dart';
-export 'teacher_precy_model.dart';
+import 'teacher_precy_copy_model.dart';
+export 'teacher_precy_copy_model.dart';
 
-class TeacherPrecyWidget extends StatefulWidget {
-  const TeacherPrecyWidget({super.key});
+class TeacherPrecyCopyWidget extends StatefulWidget {
+  const TeacherPrecyCopyWidget({super.key});
 
   @override
-  State<TeacherPrecyWidget> createState() => _TeacherPrecyWidgetState();
+  State<TeacherPrecyCopyWidget> createState() => _TeacherPrecyCopyWidgetState();
 }
 
-class _TeacherPrecyWidgetState extends State<TeacherPrecyWidget> {
-  late TeacherPrecyModel _model;
+class _TeacherPrecyCopyWidgetState extends State<TeacherPrecyCopyWidget> {
+  late TeacherPrecyCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TeacherPrecyModel());
+    _model = createModel(context, () => TeacherPrecyCopyModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -91,27 +91,13 @@ class _TeacherPrecyWidgetState extends State<TeacherPrecyWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            _model.soundPlayer?.stop();
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(
-                                  'Sound Stopping',
-                                  style: TextStyle(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                  ),
-                                ),
-                                duration: const Duration(milliseconds: 4000),
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).secondary,
-                              ),
-                            );
                             context.safePop();
+                            _model.soundPlayer?.stop();
                           },
                           child: Icon(
-                            Icons.stop_circle_sharp,
-                            color: FlutterFlowTheme.of(context).success,
-                            size: 44.0,
+                            Icons.arrow_back_ios_new,
+                            color: FlutterFlowTheme.of(context).tertiary,
+                            size: 34.0,
                           ),
                         ),
                       ],

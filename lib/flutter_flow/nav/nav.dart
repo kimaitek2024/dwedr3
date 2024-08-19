@@ -111,11 +111,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const Auth3ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'TeacherPrecy',
-          path: '/teacherPrecy',
-          builder: (context, params) => const TeacherPrecyWidget(),
-        ),
-        FFRoute(
           name: 'Academy',
           path: '/academy',
           builder: (context, params) => params.isEmpty
@@ -145,8 +140,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'notifications',
           path: '/notifications',
           builder: (context, params) => const NotificationsWidget(),
+        ),
+        FFRoute(
+          name: 'TeacherPrecy',
+          path: '/teacherPrecy',
+          builder: (context, params) => const TeacherPrecyWidget(),
+        ),
+        FFRoute(
+          name: 'TeacherPrecyCopy',
+          path: '/teacherPrecyCopy',
+          builder: (context, params) => const TeacherPrecyCopyWidget(),
+        ),
+        FFRoute(
+          name: 'academyRadio',
+          path: '/academyRadio',
+          builder: (context, params) => const AcademyRadioWidget(),
+        ),
+        FFRoute(
+          name: 'QrScanner',
+          path: '/qrScanner',
+          builder: (context, params) => const QrScannerWidget(),
+        ),
+        FFRoute(
+          name: 'List23ActivityResponsive',
+          path: '/list23ActivityResponsive',
+          builder: (context, params) => const List23ActivityResponsiveWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

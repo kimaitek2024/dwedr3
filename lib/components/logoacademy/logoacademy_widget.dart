@@ -1,17 +1,17 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'logopanyero_model.dart';
-export 'logopanyero_model.dart';
+import 'logoacademy_model.dart';
+export 'logoacademy_model.dart';
 
-class LogopanyeroWidget extends StatefulWidget {
-  const LogopanyeroWidget({super.key});
+class LogoacademyWidget extends StatefulWidget {
+  const LogoacademyWidget({super.key});
 
   @override
-  State<LogopanyeroWidget> createState() => _LogopanyeroWidgetState();
+  State<LogoacademyWidget> createState() => _LogoacademyWidgetState();
 }
 
-class _LogopanyeroWidgetState extends State<LogopanyeroWidget> {
-  late LogopanyeroModel _model;
+class _LogoacademyWidgetState extends State<LogoacademyWidget> {
+  late LogoacademyModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -22,7 +22,7 @@ class _LogopanyeroWidgetState extends State<LogopanyeroWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => LogopanyeroModel());
+    _model = createModel(context, () => LogoacademyModel());
   }
 
   @override

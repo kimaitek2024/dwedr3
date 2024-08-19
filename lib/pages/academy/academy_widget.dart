@@ -360,7 +360,7 @@ class _AcademyWidgetState extends State<AcademyWidget> {
                                                                       0.0,
                                                                       0.0),
                                                           child: Text(
-                                                            'ADVANCED ACADEMY OF\nNORTHERN PHILIPPINES',
+                                                            'ADVANCED ACADEMY OF\nNORTHERN PHILIPPINES INC',
                                                             textAlign: TextAlign
                                                                 .justify,
                                                             style: FlutterFlowTheme

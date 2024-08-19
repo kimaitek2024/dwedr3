@@ -1,4 +1,4 @@
-import '/components/logopanyero/logopanyero_widget.dart';
+import '/components/logoacademy/logoacademy_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'auth3_create_widget.dart' show Auth3CreateWidget;
 import 'package:flutter/material.dart';
@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 class Auth3CreateModel extends FlutterFlowModel<Auth3CreateWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Model for logopanyero component.
-  late LogopanyeroModel logopanyeroModel;
+  // Model for logoacademy component.
+  late LogoacademyModel logoacademyModel;
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
@@ -34,14 +34,14 @@ class Auth3CreateModel extends FlutterFlowModel<Auth3CreateWidget> {
 
   @override
   void initState(BuildContext context) {
-    logopanyeroModel = createModel(context, () => LogopanyeroModel());
+    logoacademyModel = createModel(context, () => LogoacademyModel());
     passwordVisibility = false;
     passwordConfirmVisibility = false;
   }
 
   @override
   void dispose() {
-    logopanyeroModel.dispose();
+    logoacademyModel.dispose();
     emailAddressFocusNode?.dispose();
     emailAddressTextController?.dispose();
 
