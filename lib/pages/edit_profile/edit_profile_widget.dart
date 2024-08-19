@@ -843,7 +843,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             },
                             text: 'Cancel',
                             options: FFButtonOptions(
-                              width: 150.0,
+                              width: 127.0,
                               height: 50.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
@@ -913,7 +913,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             },
                             text: 'Save Changes',
                             options: FFButtonOptions(
-                              width: 150.0,
+                              width: 199.0,
                               height: 52.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
