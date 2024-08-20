@@ -124,42 +124,19 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Material(
-                                            color: Colors.transparent,
-                                            elevation: 8.0,
-                                            shape: const RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.only(
-                                                bottomLeft:
-                                                    Radius.circular(22.0),
-                                                bottomRight:
-                                                    Radius.circular(22.0),
-                                                topLeft: Radius.circular(22.0),
-                                                topRight: Radius.circular(22.0),
-                                              ),
-                                            ),
-                                            child: Container(
-                                              width: 267.0,
-                                              height: 450.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                boxShadow: const [
-                                                  BoxShadow(
-                                                    blurRadius: 4.0,
-                                                    color: Color(0x33000000),
-                                                    offset: Offset(
-                                                      0.0,
-                                                      2.0,
-                                                    ),
-                                                  )
-                                                ],
-                                                borderRadius: const BorderRadius.only(
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 8.0, 0.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Material(
+                                              color: Colors.transparent,
+                                              elevation: 8.0,
+                                              shape: const RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(22.0),
                                                   bottomRight:
@@ -169,26 +146,57 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                                   topRight:
                                                       Radius.circular(22.0),
                                                 ),
-                                                border: Border.all(
+                                              ),
+                                              child: Container(
+                                                width: 267.0,
+                                                height: 450.0,
+                                                decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
-                                                  width: 1.0,
+                                                      .primaryBackground,
+                                                  boxShadow: const [
+                                                    BoxShadow(
+                                                      blurRadius: 4.0,
+                                                      color: Color(0x33000000),
+                                                      offset: Offset(
+                                                        0.0,
+                                                        2.0,
+                                                      ),
+                                                    )
+                                                  ],
+                                                  borderRadius:
+                                                      const BorderRadius.only(
+                                                    bottomLeft:
+                                                        Radius.circular(22.0),
+                                                    bottomRight:
+                                                        Radius.circular(22.0),
+                                                    topLeft:
+                                                        Radius.circular(22.0),
+                                                    topRight:
+                                                        Radius.circular(22.0),
+                                                  ),
+                                                  border: Border.all(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    width: 1.0,
+                                                  ),
                                                 ),
-                                              ),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
-                                                child: Image.asset(
-                                                  'assets/images/vnimc_1.png',
-                                                  width: 350.0,
-                                                  height: 450.0,
-                                                  fit: BoxFit.cover,
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12.0),
+                                                  child: Image.asset(
+                                                    'assets/images/vnimc_1.png',
+                                                    width: 350.0,
+                                                    height: 450.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
