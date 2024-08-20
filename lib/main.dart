@@ -127,7 +127,7 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'Homepage': const HomepageWidget(),
-      'Academy': const AcademyWidget(),
+      'GeneratedID': const GeneratedIDWidget(),
       'QrCode': const QrCodeWidget(),
       'Profile': const ProfileWidget(),
       'EditProfile': const EditProfileWidget(),

@@ -76,6 +76,11 @@ class AnnouncementsRecord extends FirestoreRecord {
   DateTime? get created => _created;
   bool hasCreated() => _created != null;
 
+  // "postNow" field.
+  bool? _postNow;
+  bool get postNow => _postNow ?? false;
+  bool hasPostNow() => _postNow != null;
+
   void _initializeFields() {
     _postPhoto = snapshotData['post_photo'] as String?;
     _postTitle = snapshotData['post_title'] as String?;
@@ -89,6 +94,7 @@ class AnnouncementsRecord extends FirestoreRecord {
     _videoType = snapshotData['video_type'] as bool?;
     _photoType = snapshotData['photo_type'] as bool?;
     _created = snapshotData['created'] as DateTime?;
+    _postNow = snapshotData['postNow'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -137,6 +143,7 @@ Map<String, dynamic> createAnnouncementsRecordData({
   bool? videoType,
   bool? photoType,
   DateTime? created,
+  bool? postNow,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -151,6 +158,7 @@ Map<String, dynamic> createAnnouncementsRecordData({
       'video_type': videoType,
       'photo_type': photoType,
       'created': created,
+      'postNow': postNow,
     }.withoutNulls,
   );
 
@@ -175,7 +183,8 @@ class AnnouncementsRecordDocumentEquality
         e1?.video == e2?.video &&
         e1?.videoType == e2?.videoType &&
         e1?.photoType == e2?.photoType &&
-        e1?.created == e2?.created;
+        e1?.created == e2?.created &&
+        e1?.postNow == e2?.postNow;
   }
 
   @override
@@ -191,7 +200,8 @@ class AnnouncementsRecordDocumentEquality
         e?.video,
         e?.videoType,
         e?.photoType,
-        e?.created
+        e?.created,
+        e?.postNow
       ]);
 
   @override

@@ -111,11 +111,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const Auth3ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'Academy',
-          path: '/academy',
+          name: 'GeneratedID',
+          path: '/generatedID',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'Academy')
-              : const AcademyWidget(),
+              ? const NavBarPage(initialPage: 'GeneratedID')
+              : const GeneratedIDWidget(),
         ),
         FFRoute(
           name: 'Profile',
@@ -152,11 +152,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AcademyRadioWidget(),
         ),
         FFRoute(
-          name: 'QrScanner',
-          path: '/qrScanner',
-          builder: (context, params) => const QrScannerWidget(),
-        ),
-        FFRoute(
           name: 'successUpdate',
           path: '/successUpdate',
           builder: (context, params) => const SuccessUpdateWidget(),
@@ -172,6 +167,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ListStudentsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

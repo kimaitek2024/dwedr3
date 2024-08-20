@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'profile_model.dart';
 export 'profile_model.dart';
@@ -469,8 +468,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            FaIcon(
-                              FontAwesomeIcons.solidAddressCard,
+                            Icon(
+                              Icons.add_to_queue,
                               color: FlutterFlowTheme.of(context).secondaryText,
                               size: 24.0,
                             ),
@@ -479,7 +478,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'Post Announcement',
+                                  'Admin Area',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(

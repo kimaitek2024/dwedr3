@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'academy_widget.dart' show AcademyWidget;
+import 'generated_i_d_widget.dart' show GeneratedIDWidget;
 import 'package:flutter/material.dart';
 
-class AcademyModel extends FlutterFlowModel<AcademyWidget> {
+class GeneratedIDModel extends FlutterFlowModel<GeneratedIDWidget> {
   ///  State fields for stateful widgets in this page.
 
   bool isDataUploading = false;
