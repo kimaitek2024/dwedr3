@@ -165,6 +165,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ListStudents',
           path: '/listStudents',
           builder: (context, params) => const ListStudentsWidget(),
+        ),
+        FFRoute(
+          name: 'terms',
+          path: '/terms',
+          builder: (context, params) => const TermsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
