@@ -19,5 +19,4 @@ export '/pages/success_update/success_update_widget.dart'
     show SuccessUpdateWidget;
 export '/admin_access/create_announcement/create_announcement_widget.dart'
     show CreateAnnouncementWidget;
-export '/admin_access/list_students/list_students_widget.dart'
-    show ListStudentsWidget;
+export '/list_students/list_students_widget.dart' show ListStudentsWidget;

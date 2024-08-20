@@ -194,8 +194,8 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             45.0, 12.0, 45.0, 12.0),
                                         child: FFButtonWidget(
-                                          onPressed: () async {
-                                            context.pushNamed('EditProfile');
+                                          onPressed: () {
+                                            print('Button pressed ...');
                                           },
                                           text: 'Update Student Info',
                                           icon: const Icon(

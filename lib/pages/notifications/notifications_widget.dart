@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -136,8 +137,11 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
                 snapshot.data!;
             if (listViewNotificationsRecordList.isEmpty) {
               return Center(
-                child: Image.asset(
-                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/panyero-ifbb3n/assets/0nyu6hzvz5pq/search-no-result-information-or-data-not-found-in-the-list-concept-illustration-flat-design-simple-modern-graphic-element-for-empty-state-ui-infographic-icon-vector.jpg',
+                child: CachedNetworkImage(
+                  fadeInDuration: const Duration(milliseconds: 0),
+                  fadeOutDuration: const Duration(milliseconds: 0),
+                  imageUrl:
+                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/panyero-ifbb3n/assets/0nyu6hzvz5pq/search-no-result-information-or-data-not-found-in-the-list-concept-illustration-flat-design-simple-modern-graphic-element-for-empty-state-ui-infographic-icon-vector.jpg',
                   fit: BoxFit.cover,
                 ),
               );
