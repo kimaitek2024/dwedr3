@@ -160,6 +160,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'successUpdate',
           path: '/successUpdate',
           builder: (context, params) => const SuccessUpdateWidget(),
+        ),
+        FFRoute(
+          name: 'CreateAnnouncement',
+          path: '/createAnnouncement',
+          builder: (context, params) => const CreateAnnouncementWidget(),
+        ),
+        FFRoute(
+          name: 'ListStudents',
+          path: '/listStudents',
+          builder: (context, params) => const ListStudentsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

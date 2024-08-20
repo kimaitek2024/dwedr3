@@ -288,8 +288,8 @@ class _SuccessUpdateWidgetState extends State<SuccessUpdateWidget>
                             Align(
                               alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Container(
-                                width: 147.0,
-                                height: 147.0,
+                                width: 194.0,
+                                height: 194.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).accent2,
                                   shape: BoxShape.circle,
@@ -301,8 +301,8 @@ class _SuccessUpdateWidgetState extends State<SuccessUpdateWidget>
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Container(
-                                    width: 140.0,
-                                    height: 140.0,
+                                    width: 209.0,
+                                    height: 209.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondary,

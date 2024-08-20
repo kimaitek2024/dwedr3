@@ -5,7 +5,7 @@ export '/pages/authenticate/auth_3_create/auth3_create_widget.dart'
     show Auth3CreateWidget;
 export '/pages/authenticate/auth_3_login/auth3_login_widget.dart'
     show Auth3LoginWidget;
-export '/pages/authenticate/auth_3_forgot_password/auth3_forgot_password_widget.dart'
+export '/pages/auth_3_forgot_password/auth3_forgot_password_widget.dart'
     show Auth3ForgotPasswordWidget;
 export '/pages/academy/academy_widget.dart' show AcademyWidget;
 export '/pages/profile/profile_widget.dart' show ProfileWidget;
@@ -18,3 +18,6 @@ export '/pages/academy_radio/academy_radio_widget.dart' show AcademyRadioWidget;
 export '/pages/qr_scanner/qr_scanner_widget.dart' show QrScannerWidget;
 export '/pages/success_update/success_update_widget.dart'
     show SuccessUpdateWidget;
+export '/create_announcement/create_announcement_widget.dart'
+    show CreateAnnouncementWidget;
+export '/list_students/list_students_widget.dart' show ListStudentsWidget;
