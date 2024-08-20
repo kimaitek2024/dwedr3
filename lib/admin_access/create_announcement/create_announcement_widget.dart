@@ -143,8 +143,8 @@ class _CreateAnnouncementWidgetState extends State<CreateAnnouncementWidget>
                     ),
               ),
               FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: () async {
+                  context.pushNamed('ListStudents');
                 },
                 text: 'Students',
                 icon: const Icon(
