@@ -10,7 +10,8 @@ Future initFirebase() async {
             projectId: "a-a-n-p-school-p2tmql",
             storageBucket: "a-a-n-p-school-p2tmql.appspot.com",
             messagingSenderId: "723113808411",
-            appId: "1:723113808411:web:0270c19072719f0613debe"));
+            appId: "1:723113808411:web:0270c19072719f0613debe",
+            measurementId: "G-063VCGH0S8"));
   } else {
     await Firebase.initializeApp();
   }
