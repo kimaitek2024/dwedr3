@@ -178,7 +178,12 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                           child: AuthUserStreamWidget(
                             builder: (context) => BarcodeWidget(
                               data:
-                                  'Student Name: $currentUserDisplayName  & ID ${valueOrDefault(currentUserDocument?.idNumber, 0).toString()}',
+                                  'Student Name: $currentUserDisplayName  & ID ${valueOrDefault(currentUserDocument?.idNumber, 0).toString()} / Just entered AANP School Premises! at exactly ${dateTimeFormat(
+                                "M/d H:mm",
+                                getCurrentTimestamp,
+                                locale:
+                                    FFLocalizations.of(context).languageCode,
+                              )}! Thanks you',
                               barcode: Barcode.qrCode(),
                               width: 280.0,
                               height: 280.0,
