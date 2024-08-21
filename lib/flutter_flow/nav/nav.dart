@@ -111,13 +111,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'GeneratedID',
-          path: '/generatedID',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'GeneratedID')
-              : const GeneratedIDWidget(),
-        ),
-        FFRoute(
           name: 'Profile',
           path: '/profile',
           builder: (context, params) => params.isEmpty
@@ -162,14 +155,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const TermsWidget(),
         ),
         FFRoute(
+          name: 'createPost',
+          path: '/createPost',
+          builder: (context, params) => const CreatePostWidget(),
+        ),
+        FFRoute(
           name: 'ListStudents',
           path: '/listStudents',
           builder: (context, params) => const ListStudentsWidget(),
         ),
         FFRoute(
-          name: 'createPost',
-          path: '/createPost',
-          builder: (context, params) => const CreatePostWidget(),
+          name: 'GeneratedID',
+          path: '/generatedID',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'GeneratedID')
+              : const GeneratedIDWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

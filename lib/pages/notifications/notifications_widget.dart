@@ -42,80 +42,92 @@ class _NotificationsWidgetState extends State<NotificationsWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          title: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Notifications',
-                style: FlutterFlowTheme.of(context).headlineLarge.override(
-                      fontFamily:
-                          FlutterFlowTheme.of(context).headlineLargeFamily,
-                      fontSize: 24.0,
-                      letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).headlineLargeFamily),
+        appBar: responsiveVisibility(
+          context: context,
+          tabletLandscape: false,
+          desktop: false,
+        )
+            ? AppBar(
+                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+                automaticallyImplyLeading: false,
+                title: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Notifications',
+                      style:
+                          FlutterFlowTheme.of(context).headlineLarge.override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineLargeFamily,
+                                fontSize: 24.0,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .headlineLargeFamily),
+                              ),
                     ),
-              ),
-              if (valueOrDefault(currentUserDocument?.unreadNotiff, 0)
-                      .toString() ==
-                  '0')
-                Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: AuthUserStreamWidget(
-                    builder: (context) => Container(
-                      decoration: const BoxDecoration(),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
-                        child: badges.Badge(
-                          badgeContent: Text(
-                            valueOrDefault<String>(
-                              valueOrDefault(
-                                      currentUserDocument?.unreadNotiff, 0)
-                                  .toString(),
-                              '1',
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleSmallFamily,
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleSmallFamily),
+                    if (valueOrDefault(currentUserDocument?.unreadNotiff, 0)
+                            .toString() ==
+                        '0')
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: AuthUserStreamWidget(
+                          builder: (context) => Container(
+                            decoration: const BoxDecoration(),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 16.0, 0.0),
+                              child: badges.Badge(
+                                badgeContent: Text(
+                                  valueOrDefault<String>(
+                                    valueOrDefault(
+                                            currentUserDocument?.unreadNotiff,
+                                            0)
+                                        .toString(),
+                                    '1',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
+                                        color: Colors.white,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily),
+                                      ),
                                 ),
-                          ),
-                          showBadge: true,
-                          shape: badges.BadgeShape.circle,
-                          badgeColor: FlutterFlowTheme.of(context).success,
-                          elevation: 4.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              8.0, 8.0, 8.0, 8.0),
-                          position: badges.BadgePosition.topEnd(),
-                          animationType: badges.BadgeAnimationType.scale,
-                          toAnimate: true,
-                          child: Icon(
-                            Icons.notifications_sharp,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 34.0,
+                                showBadge: true,
+                                shape: badges.BadgeShape.circle,
+                                badgeColor:
+                                    FlutterFlowTheme.of(context).success,
+                                elevation: 4.0,
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 8.0, 8.0, 8.0),
+                                position: badges.BadgePosition.topEnd(),
+                                animationType: badges.BadgeAnimationType.scale,
+                                toAnimate: true,
+                                child: Icon(
+                                  Icons.notifications_sharp,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 34.0,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ),
+                  ],
                 ),
-            ],
-          ),
-          actions: const [],
-          centerTitle: false,
-          elevation: 0.0,
-        ),
+                actions: const [],
+                centerTitle: false,
+                elevation: 0.0,
+              )
+            : null,
         body: StreamBuilder<List<NotificationsRecord>>(
           stream: queryNotificationsRecord(),
           builder: (context, snapshot) {

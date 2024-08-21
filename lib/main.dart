@@ -142,8 +142,8 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        selectedItemColor: const Color(0xFF251F83),
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        selectedItemColor: const Color(0xFF01245C),
         unselectedItemColor: FlutterFlowTheme.of(context).secondaryText,
         showSelectedLabels: false,
         showUnselectedLabels: false,
@@ -158,11 +158,11 @@ class _NavBarPageState extends State<NavBarPage> {
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.idCard,
-              size: 18.0,
+            icon: Icon(
+              Icons.featured_video,
+              size: 22.0,
             ),
-            label: 'idmo',
+            label: 'studentid',
             tooltip: '',
           ),
           BottomNavigationBarItem(
