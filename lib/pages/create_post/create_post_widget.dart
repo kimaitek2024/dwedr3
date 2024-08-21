@@ -2,10 +2,8 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_media_display.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
@@ -113,192 +111,145 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                     height: 350.0,
                                     child: Stack(
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              final selectedMedia =
-                                                  await selectMediaWithSourceBottomSheet(
-                                                context: context,
-                                                allowPhoto: true,
-                                                allowVideo: true,
-                                                backgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                textColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                pickerFontFamily: 'Figtree',
-                                              );
-                                              if (selectedMedia != null &&
-                                                  selectedMedia.every((m) =>
-                                                      validateFileFormat(
-                                                          m.storagePath,
-                                                          context))) {
-                                                setState(() => _model
-                                                    .isDataUploading = true);
-                                                var selectedUploadedFiles =
-                                                    <FFUploadedFile>[];
+                                        InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            final selectedMedia =
+                                                await selectMediaWithSourceBottomSheet(
+                                              context: context,
+                                              allowPhoto: true,
+                                              allowVideo: true,
+                                            );
+                                            if (selectedMedia != null &&
+                                                selectedMedia.every((m) =>
+                                                    validateFileFormat(
+                                                        m.storagePath,
+                                                        context))) {
+                                              setState(() => _model
+                                                  .isDataUploading = true);
+                                              var selectedUploadedFiles =
+                                                  <FFUploadedFile>[];
 
-                                                var downloadUrls = <String>[];
-                                                try {
-                                                  showUploadMessage(
-                                                    context,
-                                                    'Uploading file...',
-                                                    showLoading: true,
-                                                  );
-                                                  selectedUploadedFiles =
-                                                      selectedMedia
-                                                          .map((m) =>
-                                                              FFUploadedFile(
-                                                                name: m
-                                                                    .storagePath
-                                                                    .split('/')
-                                                                    .last,
-                                                                bytes: m.bytes,
-                                                                height: m
-                                                                    .dimensions
-                                                                    ?.height,
-                                                                width: m
-                                                                    .dimensions
-                                                                    ?.width,
-                                                                blurHash:
-                                                                    m.blurHash,
-                                                              ))
-                                                          .toList();
+                                              var downloadUrls = <String>[];
+                                              try {
+                                                selectedUploadedFiles =
+                                                    selectedMedia
+                                                        .map((m) =>
+                                                            FFUploadedFile(
+                                                              name: m
+                                                                  .storagePath
+                                                                  .split('/')
+                                                                  .last,
+                                                              bytes: m.bytes,
+                                                              height: m
+                                                                  .dimensions
+                                                                  ?.height,
+                                                              width: m
+                                                                  .dimensions
+                                                                  ?.width,
+                                                              blurHash:
+                                                                  m.blurHash,
+                                                            ))
+                                                        .toList();
 
-                                                  downloadUrls =
-                                                      (await Future.wait(
-                                                    selectedMedia.map(
-                                                      (m) async =>
-                                                          await uploadData(
-                                                              m.storagePath,
-                                                              m.bytes),
-                                                    ),
-                                                  ))
-                                                          .where(
-                                                              (u) => u != null)
-                                                          .map((u) => u!)
-                                                          .toList();
-                                                } finally {
-                                                  ScaffoldMessenger.of(context)
-                                                      .hideCurrentSnackBar();
-                                                  _model.isDataUploading =
-                                                      false;
-                                                }
-                                                if (selectedUploadedFiles
-                                                            .length ==
-                                                        selectedMedia.length &&
-                                                    downloadUrls.length ==
-                                                        selectedMedia.length) {
-                                                  setState(() {
-                                                    _model.uploadedLocalFile =
-                                                        selectedUploadedFiles
-                                                            .first;
-                                                    _model.uploadedFileUrl =
-                                                        downloadUrls.first;
-                                                  });
-                                                  showUploadMessage(
-                                                      context, 'Success!');
-                                                } else {
-                                                  setState(() {});
-                                                  showUploadMessage(context,
-                                                      'Failed to upload data');
-                                                  return;
-                                                }
+                                                downloadUrls =
+                                                    (await Future.wait(
+                                                  selectedMedia.map(
+                                                    (m) async =>
+                                                        await uploadData(
+                                                            m.storagePath,
+                                                            m.bytes),
+                                                  ),
+                                                ))
+                                                        .where((u) => u != null)
+                                                        .map((u) => u!)
+                                                        .toList();
+                                              } finally {
+                                                _model.isDataUploading = false;
                                               }
-                                            },
-                                            child: Container(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
-                                              height: 350.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                image: DecorationImage(
-                                                  fit: BoxFit.cover,
-                                                  image: Image.network(
-                                                    'https://cdn.pixabay.com/photo/2017/04/20/07/07/add-2244771_640.png',
-                                                  ).image,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
+                                              if (selectedUploadedFiles
+                                                          .length ==
+                                                      selectedMedia.length &&
+                                                  downloadUrls.length ==
+                                                      selectedMedia.length) {
+                                                setState(() {
+                                                  _model.uploadedLocalFile =
+                                                      selectedUploadedFiles
+                                                          .first;
+                                                  _model.uploadedFileUrl =
+                                                      downloadUrls.first;
+                                                });
+                                              } else {
+                                                setState(() {});
+                                                return;
+                                              }
+                                            }
+
+                                            var userPostRecordReference =
+                                                UserPostRecord.collection.doc();
+                                            await userPostRecordReference
+                                                .set(createUserPostRecordData(
+                                              postTitle: 'Academy Post',
+                                              postDescription:
+                                                  valueOrDefault<String>(
+                                                _model.textController.text,
+                                                'Teaching with technology. Utilizes these tools to empower learning.',
                                               ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 24.0),
-                                                    child: Icon(
-                                                      Icons
-                                                          .add_a_photo_outlined,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      size: 72.0,
+                                              postUser: currentUserReference,
+                                              timePosted: getCurrentTimestamp,
+                                              postPhoto: _model.uploadedFileUrl,
+                                              videoPost: _model.uploadedFileUrl,
+                                            ));
+                                            _model.postedAcademy = UserPostRecord
+                                                .getDocumentFromData(
+                                                    createUserPostRecordData(
+                                                      postTitle: 'Academy Post',
+                                                      postDescription:
+                                                          valueOrDefault<
+                                                              String>(
+                                                        _model.textController
+                                                            .text,
+                                                        'Teaching with technology. Utilizes these tools to empower learning.',
+                                                      ),
+                                                      postUser:
+                                                          currentUserReference,
+                                                      timePosted:
+                                                          getCurrentTimestamp,
+                                                      postPhoto: _model
+                                                          .uploadedFileUrl,
+                                                      videoPost: _model
+                                                          .uploadedFileUrl,
                                                     ),
-                                                  ),
-                                                  Text(
-                                                    'Add image or video here.',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMediumFamily),
-                                                        ),
-                                                  ),
-                                                ],
+                                                    userPostRecordReference);
+
+                                            setState(() {});
+                                          },
+                                          child: Container(
+                                            width: double.infinity,
+                                            height: double.infinity,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              image: DecorationImage(
+                                                fit: BoxFit.cover,
+                                                image: Image.network(
+                                                  '',
+                                                ).image,
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: FlutterFlowMediaDisplay(
-                                            path: _model.uploadedFileUrl,
-                                            imageBuilder: (path) =>
-                                                Image.network(
-                                              path,
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
-                                              height: double.infinity,
-                                              fit: BoxFit.cover,
-                                            ),
-                                            videoPlayerBuilder: (path) =>
-                                                FlutterFlowVideoPlayer(
-                                              path: path,
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
-                                              autoPlay: false,
-                                              looping: true,
-                                              showControls: true,
-                                              allowFullScreen: true,
-                                              allowPlaybackSpeedMenu: false,
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                              child: Image.network(
+                                                'https://picsum.photos/seed/21/600',
+                                                width: double.infinity,
+                                                height: double.infinity,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -320,7 +271,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                 TextCapitalization.sentences,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              hintText: 'Comment....',
+                                              hintText: 'Description....',
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
@@ -438,28 +389,12 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          var userPostRecordReference =
-                              UserPostRecord.collection.doc();
-                          await userPostRecordReference
-                              .set(createUserPostRecordData(
-                            postPhoto: _model.uploadedFileUrl,
-                            postTitle: 'From Admin',
-                            postDescription: _model.textController.text,
-                            postUser: currentUserReference,
-                            timePosted: getCurrentTimestamp,
+                          await _model.postedAcademy!.reference
+                              .update(createUserPostRecordData(
+                            postnow: true,
                           ));
-                          _model.postedAnnouncements =
-                              UserPostRecord.getDocumentFromData(
-                                  createUserPostRecordData(
-                                    postPhoto: _model.uploadedFileUrl,
-                                    postTitle: 'From Admin',
-                                    postDescription: _model.textController.text,
-                                    postUser: currentUserReference,
-                                    timePosted: getCurrentTimestamp,
-                                  ),
-                                  userPostRecordReference);
 
-                          setState(() {});
+                          context.pushNamed('Homepage');
                         },
                         text: 'Create Post',
                         options: FFButtonOptions(

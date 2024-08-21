@@ -170,11 +170,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'createPost',
           path: '/createPost',
           builder: (context, params) => const CreatePostWidget(),
-        ),
-        FFRoute(
-          name: 'MainHome',
-          path: '/mainHome',
-          builder: (context, params) => const MainHomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

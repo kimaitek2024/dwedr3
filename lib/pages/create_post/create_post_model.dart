@@ -11,12 +11,12 @@ class CreatePostModel extends FlutterFlowModel<CreatePostWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
+  // Stores action output result for [Backend Call - Create Document] action in Container widget.
+  UserPostRecord? postedAcademy;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  UserPostRecord? postedAnnouncements;
 
   @override
   void initState(BuildContext context) {}

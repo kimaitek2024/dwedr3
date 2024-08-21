@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_media_display.dart';
@@ -428,7 +429,13 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                 borderRadius: BorderRadius.circular(0.0),
                               ),
                               child: StreamBuilder<List<UserPostRecord>>(
-                                stream: queryUserPostRecord(),
+                                stream: queryUserPostRecord(
+                                  queryBuilder: (userPostRecord) =>
+                                      userPostRecord.where(
+                                    'postnow',
+                                    isEqualTo: true,
+                                  ),
+                                ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {
@@ -542,7 +549,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                                     .start,
                                                             children: [
                                                               Text(
-                                                                'Advanced Academy of Northern Philippines',
+                                                                listViewUserPostRecord
+                                                                    .postTitle,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyLarge
@@ -599,33 +607,39 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                 ),
                                               ),
                                             ),
-                                            FlutterFlowMediaDisplay(
-                                              path: listViewUserPostRecord
-                                                  .postPhoto,
-                                              imageBuilder: (path) =>
-                                                  CachedNetworkImage(
-                                                fadeInDuration:
-                                                    const Duration(milliseconds: 0),
-                                                fadeOutDuration:
-                                                    const Duration(milliseconds: 0),
-                                                imageUrl: path,
-                                                width:
-                                                    MediaQuery.sizeOf(context)
-                                                            .width *
-                                                        1.0,
-                                                height: 350.0,
-                                                fit: BoxFit.cover,
-                                              ),
-                                              videoPlayerBuilder: (path) =>
-                                                  FlutterFlowVideoPlayer(
-                                                path: path,
-                                                width: double.infinity,
-                                                height: double.infinity,
-                                                autoPlay: true,
-                                                looping: true,
-                                                showControls: false,
-                                                allowFullScreen: true,
-                                                allowPlaybackSpeedMenu: false,
+                                            Container(
+                                              decoration: const BoxDecoration(),
+                                              child: FlutterFlowMediaDisplay(
+                                                path: valueOrDefault<String>(
+                                                  listViewUserPostRecord
+                                                      .videoPost,
+                                                  'https://firebasestorage.googleapis.com/v0/b/aiconnect-7l4ywd.appspot.com/o/videoplayback.mp4?alt=media&token=5426fca5-87dd-4149-9171-24d482d157ca',
+                                                ),
+                                                imageBuilder: (path) =>
+                                                    CachedNetworkImage(
+                                                  fadeInDuration:
+                                                      const Duration(milliseconds: 0),
+                                                  fadeOutDuration:
+                                                      const Duration(milliseconds: 0),
+                                                  imageUrl: path,
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          1.0,
+                                                  height: 350.0,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                                videoPlayerBuilder: (path) =>
+                                                    FlutterFlowVideoPlayer(
+                                                  path: path,
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  autoPlay: false,
+                                                  looping: false,
+                                                  showControls: true,
+                                                  allowFullScreen: true,
+                                                  allowPlaybackSpeedMenu: true,
+                                                ),
                                               ),
                                             ),
                                             Padding(
@@ -688,38 +702,40 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          context.pushNamed(
-                                                              'createPost');
-                                                        },
-                                                        child: Text(
-                                                          'Create Post',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelSmallFamily),
-                                                              ),
+                                                      if (currentUserEmail ==
+                                                          'admin@aanp.site')
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                                'createPost');
+                                                          },
+                                                          child: Text(
+                                                            'Create Post',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelSmallFamily),
+                                                                ),
+                                                          ),
                                                         ),
-                                                      ),
                                                     ],
                                                   ),
                                                 ],

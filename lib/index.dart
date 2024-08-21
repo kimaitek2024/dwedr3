@@ -18,4 +18,3 @@ export '/pages/success_update/success_update_widget.dart'
 export '/pages/terms/terms_widget.dart' show TermsWidget;
 export '/pages/list_students/list_students_widget.dart' show ListStudentsWidget;
 export '/pages/create_post/create_post_widget.dart' show CreatePostWidget;
-export '/pages/main_home/main_home_widget.dart' show MainHomeWidget;

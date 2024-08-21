@@ -56,6 +56,16 @@ class UserPostRecord extends FirestoreRecord {
   int get numVotes => _numVotes ?? 0;
   bool hasNumVotes() => _numVotes != null;
 
+  // "video_post" field.
+  String? _videoPost;
+  String get videoPost => _videoPost ?? '';
+  bool hasVideoPost() => _videoPost != null;
+
+  // "postnow" field.
+  bool? _postnow;
+  bool get postnow => _postnow ?? false;
+  bool hasPostnow() => _postnow != null;
+
   void _initializeFields() {
     _postPhoto = snapshotData['post_photo'] as String?;
     _postTitle = snapshotData['post_title'] as String?;
@@ -65,6 +75,8 @@ class UserPostRecord extends FirestoreRecord {
     _likes = getDataList(snapshotData['likes']);
     _numComments = castToType<int>(snapshotData['num_comments']);
     _numVotes = castToType<int>(snapshotData['num_votes']);
+    _videoPost = snapshotData['video_post'] as String?;
+    _postnow = snapshotData['postnow'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -109,6 +121,8 @@ Map<String, dynamic> createUserPostRecordData({
   DateTime? timePosted,
   int? numComments,
   int? numVotes,
+  String? videoPost,
+  bool? postnow,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -119,6 +133,8 @@ Map<String, dynamic> createUserPostRecordData({
       'time_posted': timePosted,
       'num_comments': numComments,
       'num_votes': numVotes,
+      'video_post': videoPost,
+      'postnow': postnow,
     }.withoutNulls,
   );
 
@@ -138,7 +154,9 @@ class UserPostRecordDocumentEquality implements Equality<UserPostRecord> {
         e1?.timePosted == e2?.timePosted &&
         listEquality.equals(e1?.likes, e2?.likes) &&
         e1?.numComments == e2?.numComments &&
-        e1?.numVotes == e2?.numVotes;
+        e1?.numVotes == e2?.numVotes &&
+        e1?.videoPost == e2?.videoPost &&
+        e1?.postnow == e2?.postnow;
   }
 
   @override
@@ -150,7 +168,9 @@ class UserPostRecordDocumentEquality implements Equality<UserPostRecord> {
         e?.timePosted,
         e?.likes,
         e?.numComments,
-        e?.numVotes
+        e?.numVotes,
+        e?.videoPost,
+        e?.postnow
       ]);
 
   @override
