@@ -188,7 +188,12 @@ class _ListStudentsWidgetState extends State<ListStudentsWidget> {
                   color: FlutterFlowTheme.of(context).primaryBackground,
                 ),
                 child: StreamBuilder<List<UsersRecord>>(
-                  stream: queryUsersRecord(),
+                  stream: queryUsersRecord(
+                    queryBuilder: (usersRecord) => usersRecord.where(
+                      'grade_average',
+                      isGreaterThan: 89,
+                    ),
+                  ),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {

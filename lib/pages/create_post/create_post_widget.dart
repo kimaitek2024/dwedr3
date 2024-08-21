@@ -2,8 +2,10 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_media_display.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
@@ -207,8 +209,8 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                               ),
                                               postUser: currentUserReference,
                                               timePosted: getCurrentTimestamp,
-                                              postPhoto: _model.uploadedFileUrl,
                                               videoPost: _model.uploadedFileUrl,
+                                              postnow: false,
                                             ));
                                             _model.postedAcademy = UserPostRecord
                                                 .getDocumentFromData(
@@ -225,10 +227,9 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                           currentUserReference,
                                                       timePosted:
                                                           getCurrentTimestamp,
-                                                      postPhoto: _model
-                                                          .uploadedFileUrl,
                                                       videoPost: _model
                                                           .uploadedFileUrl,
+                                                      postnow: false,
                                                     ),
                                                     userPostRecordReference);
 
@@ -248,14 +249,27 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                 ).image,
                                               ),
                                             ),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                              child: Image.network(
-                                                'https://picsum.photos/seed/21/600',
-                                                width: double.infinity,
-                                                height: double.infinity,
-                                                fit: BoxFit.cover,
+                                            child: FlutterFlowMediaDisplay(
+                                              path: _model.uploadedFileUrl,
+                                              imageBuilder: (path) => ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                child: Image.network(
+                                                  path,
+                                                  width: 300.0,
+                                                  height: 300.0,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                              videoPlayerBuilder: (path) =>
+                                                  FlutterFlowVideoPlayer(
+                                                path: path,
+                                                width: 300.0,
+                                                autoPlay: false,
+                                                looping: true,
+                                                showControls: true,
+                                                allowFullScreen: true,
+                                                allowPlaybackSpeedMenu: false,
                                               ),
                                             ),
                                           ),
@@ -399,6 +413,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                           await _model.postedAcademy!.reference
                               .update(createUserPostRecordData(
                             postnow: true,
+                            postDescription: _model.textController.text,
                           ));
 
                           context.pushNamed('Homepage');

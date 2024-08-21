@@ -184,7 +184,7 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.userAlt,
-              size: 18.0,
+              size: 22.0,
             ),
             label: 'Profile',
             tooltip: '',

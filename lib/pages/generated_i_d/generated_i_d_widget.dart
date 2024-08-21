@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -75,7 +76,7 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
               primary: false,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
                     decoration: BoxDecoration(
@@ -86,26 +87,32 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 0.0),
-                          child: SingleChildScrollView(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Material(
-                                      color: Colors.transparent,
-                                      elevation: 8.0,
-                                      shape: const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(22.0),
-                                          bottomRight: Radius.circular(22.0),
-                                          topLeft: Radius.circular(22.0),
-                                          topRight: Radius.circular(22.0),
-                                        ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Material(
+                                    color: Colors.transparent,
+                                    elevation: 8.0,
+                                    shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(22.0),
+                                        bottomRight: Radius.circular(22.0),
+                                        topLeft: Radius.circular(22.0),
+                                        topRight: Radius.circular(22.0),
+                                      ),
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: const BorderRadius.only(
+                                        bottomLeft: Radius.circular(22.0),
+                                        bottomRight: Radius.circular(22.0),
+                                        topLeft: Radius.circular(22.0),
+                                        topRight: Radius.circular(22.0),
                                       ),
                                       child: Container(
                                         width: 267.0,
@@ -147,95 +154,92 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                         ),
                                       ),
                                     ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      45.0, 24.0, 45.0, 12.0),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pushNamed('EditProfile');
-                                    },
-                                    text: 'Update Student Info',
-                                    icon: const Icon(
-                                      Icons.edit_square,
-                                      size: 28.0,
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    45.0, 24.0, 45.0, 12.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    context.pushNamed('EditProfile');
+                                  },
+                                  text: 'Update Student Info',
+                                  icon: const Icon(
+                                    Icons.edit_square,
+                                    size: 28.0,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 54.0,
+                                    padding: const EdgeInsets.all(0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
+                                        ),
+                                    elevation: 4.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
                                     ),
-                                    options: FFButtonOptions(
-                                      width: double.infinity,
-                                      height: 54.0,
-                                      padding: const EdgeInsets.all(0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily,
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmallFamily),
-                                          ),
-                                      elevation: 4.0,
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      45.0, 12.0, 45.0, 12.0),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pushNamed('QrCode');
-                                    },
-                                    text: 'My  QR Code',
-                                    icon: const Icon(
-                                      Icons.qr_code_2_outlined,
-                                      size: 30.0,
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    45.0, 12.0, 45.0, 12.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    context.pushNamed('QrCode');
+                                  },
+                                  text: 'My  QR Code',
+                                  icon: const Icon(
+                                    Icons.qr_code_2_outlined,
+                                    size: 30.0,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 54.0,
+                                    padding: const EdgeInsets.all(0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: const Color(0xFFA3664B),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
+                                        ),
+                                    elevation: 4.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
                                     ),
-                                    options: FFButtonOptions(
-                                      width: double.infinity,
-                                      height: 54.0,
-                                      padding: const EdgeInsets.all(0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFFA3664B),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily,
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmallFamily),
-                                          ),
-                                      elevation: 4.0,
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                         Align(
@@ -507,6 +511,13 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                                                   return;
                                                                 }
                                                               }
+
+                                                              await currentUserReference!
+                                                                  .update(
+                                                                      createUsersRecordData(
+                                                                photoUrl: _model
+                                                                    .uploadedFileUrl,
+                                                              ));
                                                             },
                                                             child: ClipRRect(
                                                               borderRadius:

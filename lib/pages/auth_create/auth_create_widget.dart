@@ -828,7 +828,8 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                                     phoneNumber: _model
                                                         .phoneTextController
                                                         .text,
-                                                    photoUrl: '',
+                                                    photoUrl:
+                                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/a-a-n-p-school-p2tmql/assets/q2hsmppj261r/Screenshot_from_2024-08-22_05-05-38-removebg-preview.png',
                                                     createdTime:
                                                         getCurrentTimestamp,
                                                     idNumber: random_data
