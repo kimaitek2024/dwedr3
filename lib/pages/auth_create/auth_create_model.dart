@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/logoacademy/logoacademy_widget.dart';
-import 'auth3_create_widget.dart' show Auth3CreateWidget;
+import 'auth_create_widget.dart' show AuthCreateWidget;
 import 'package:flutter/material.dart';
 
-class Auth3CreateModel extends FlutterFlowModel<Auth3CreateWidget> {
+class AuthCreateModel extends FlutterFlowModel<AuthCreateWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for logoacademy component.

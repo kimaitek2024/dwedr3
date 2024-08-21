@@ -7,19 +7,19 @@ import '/pages/components/logoacademy/logoacademy_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'auth3_login_model.dart';
-export 'auth3_login_model.dart';
+import 'login_model.dart';
+export 'login_model.dart';
 
-class Auth3LoginWidget extends StatefulWidget {
-  const Auth3LoginWidget({super.key});
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({super.key});
 
   @override
-  State<Auth3LoginWidget> createState() => _Auth3LoginWidgetState();
+  State<LoginWidget> createState() => _LoginWidgetState();
 }
 
-class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
+class _LoginWidgetState extends State<LoginWidget>
     with TickerProviderStateMixin {
-  late Auth3LoginModel _model;
+  late LoginModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -28,7 +28,7 @@ class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Auth3LoginModel());
+    _model = createModel(context, () => LoginModel());
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -516,7 +516,7 @@ class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'auth_3_Create',
+                                              'authCreate',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     const TransitionInfo(
@@ -608,7 +608,7 @@ class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'auth_3_ForgotPassword',
+                                      'ForgotPassword',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,

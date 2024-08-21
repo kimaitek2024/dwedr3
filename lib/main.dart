@@ -129,8 +129,8 @@ class _NavBarPageState extends State<NavBarPage> {
       'Homepage': const HomepageWidget(),
       'GeneratedID': const GeneratedIDWidget(),
       'QrCode': const QrCodeWidget(),
-      'Profile': const ProfileWidget(),
       'EditProfile': const EditProfileWidget(),
+      'Profile': const ProfileWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -174,19 +174,19 @@ class _NavBarPageState extends State<NavBarPage> {
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.userAlt,
-              size: 18.0,
-            ),
-            label: 'Profile',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(
               Icons.settings_sharp,
               size: 20.0,
             ),
             label: 'edit',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.userAlt,
+              size: 18.0,
+            ),
+            label: 'Profile',
             tooltip: '',
           )
         ],

@@ -202,13 +202,13 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             45.0, 12.0, 45.0, 12.0),
                                         child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            context.pushNamed('QrCode');
                                           },
-                                          text: 'Update Student Info',
+                                          text: 'My  QR Code',
                                           icon: const Icon(
-                                            Icons.edit_square,
-                                            size: 28.0,
+                                            Icons.qr_code_2_outlined,
+                                            size: 30.0,
                                           ),
                                           options: FFButtonOptions(
                                             width: double.infinity,
@@ -217,7 +217,7 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                             iconPadding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: const Color(0xFF18256D),
+                                            color: const Color(0xFFA3664B),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -247,15 +247,15 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            45.0, 4.0, 45.0, 12.0),
+                                            45.0, 0.0, 45.0, 12.0),
                                         child: FFButtonWidget(
-                                          onPressed: () async {
-                                            context.pushNamed('QrCode');
+                                          onPressed: () {
+                                            print('Button pressed ...');
                                           },
-                                          text: 'My  QR Code',
+                                          text: 'Update Student Info',
                                           icon: const Icon(
-                                            Icons.qr_code_2_outlined,
-                                            size: 30.0,
+                                            Icons.edit_square,
+                                            size: 28.0,
                                           ),
                                           options: FFButtonOptions(
                                             width: double.infinity,
@@ -264,7 +264,7 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                             iconPadding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: const Color(0xFFA3664B),
+                                            color: const Color(0xFF18256D),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -470,7 +470,7 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                                                         .sizeOf(
                                                                             context)
                                                                     .height *
-                                                                0.144,
+                                                                0.16,
                                                             decoration:
                                                                 const BoxDecoration(
                                                               borderRadius:
@@ -626,7 +626,7 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                                                     width:
                                                                         300.0,
                                                                     height:
-                                                                        182.0,
+                                                                        190.0,
                                                                     fit: BoxFit
                                                                         .cover,
                                                                   ),
@@ -645,41 +645,38 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                         ],
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 40.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SingleChildScrollView(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 4.0, 0.0, 0.0),
-                                                  child: SingleChildScrollView(
-                                                    scrollDirection:
-                                                        Axis.horizontal,
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      8.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Container(
+                                    Container(
+                                      height: 195.0,
+                                      decoration: const BoxDecoration(),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 25.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SingleChildScrollView(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 4.0,
+                                                                0.0, 0.0),
+                                                    child:
+                                                        SingleChildScrollView(
+                                                      scrollDirection:
+                                                          Axis.horizontal,
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Container(
                                                             width: 182.0,
                                                             height: 32.0,
                                                             decoration:
@@ -703,6 +700,9 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                                               shape: BoxShape
                                                                   .rectangle,
                                                             ),
+                                                            alignment:
+                                                                const AlignmentDirectional(
+                                                                    0.0, -1.0),
                                                             child: Align(
                                                               alignment:
                                                                   const AlignmentDirectional(
@@ -728,6 +728,8 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                                                             18.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
                                                                         useGoogleFonts:
                                                                             GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                       ),
@@ -735,244 +737,257 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                                               ),
                                                             ),
                                                           ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  SingleChildScrollView(
+                                                    scrollDirection:
+                                                        Axis.horizontal,
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Container(
+                                                          width: 182.0,
+                                                          height: 20.0,
+                                                          decoration:
+                                                              const BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      25.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          25.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      25.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      25.0),
+                                                            ),
+                                                            shape: BoxShape
+                                                                .rectangle,
+                                                          ),
+                                                          child: Align(
+                                                            alignment:
+                                                                const AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child:
+                                                                AuthUserStreamWidget(
+                                                              builder:
+                                                                  (context) =>
+                                                                      Text(
+                                                                'ID ${valueOrDefault(currentUserDocument?.idNumber, 0).toString()}',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ),
                                                         ),
                                                       ],
                                                     ),
                                                   ),
-                                                ),
-                                                SingleChildScrollView(
-                                                  scrollDirection:
-                                                      Axis.horizontal,
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Container(
-                                                        width: 182.0,
-                                                        height: 20.0,
-                                                        decoration:
-                                                            const BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius.only(
-                                                            bottomLeft:
-                                                                Radius.circular(
-                                                                    25.0),
-                                                            bottomRight:
-                                                                Radius.circular(
-                                                                    25.0),
-                                                            topLeft:
-                                                                Radius.circular(
-                                                                    25.0),
-                                                            topRight:
-                                                                Radius.circular(
-                                                                    25.0),
-                                                          ),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              const AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child:
-                                                              AuthUserStreamWidget(
-                                                            builder:
-                                                                (context) =>
-                                                                    Text(
-                                                              'ID ${valueOrDefault(currentUserDocument?.idNumber, 0).toString()}',
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        12.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                  ),
+                                                  SingleChildScrollView(
+                                                    scrollDirection:
+                                                        Axis.horizontal,
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Container(
+                                                          width: 202.0,
+                                                          height: 119.0,
+                                                          decoration:
+                                                              const BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      25.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          25.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      25.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      25.0),
                                                             ),
+                                                            shape: BoxShape
+                                                                .rectangle,
                                                           ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                SingleChildScrollView(
-                                                  scrollDirection:
-                                                      Axis.horizontal,
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Container(
-                                                        width: 202.0,
-                                                        height: 119.0,
-                                                        decoration:
-                                                            const BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius.only(
-                                                            bottomLeft:
-                                                                Radius.circular(
-                                                                    25.0),
-                                                            bottomRight:
-                                                                Radius.circular(
-                                                                    25.0),
-                                                            topLeft:
-                                                                Radius.circular(
-                                                                    25.0),
-                                                            topRight:
-                                                                Radius.circular(
-                                                                    25.0),
-                                                          ),
-                                                          shape: BoxShape
-                                                              .rectangle,
-                                                        ),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .end,
-                                                          children: [
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            8.0),
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .end,
+                                                            children: [
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
                                                                 child:
-                                                                    Image.asset(
-                                                                  'assets/images/Signature_Precy.png',
-                                                                  width: 300.0,
-                                                                  height: 80.0,
-                                                                  fit: BoxFit
-                                                                      .fill,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            const Spacer(flex: 3),
-                                                            Text(
-                                                              'Precila A. Quilang',
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                  ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          2.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Container(
-                                                                width: 180.0,
-                                                                height: 18.0,
-                                                                decoration:
-                                                                    const BoxDecoration(
-                                                                  color: Colors
-                                                                      .transparent,
+                                                                    ClipRRect(
                                                                   borderRadius:
                                                                       BorderRadius
-                                                                          .only(
-                                                                    bottomLeft:
-                                                                        Radius.circular(
-                                                                            8.0),
-                                                                    bottomRight:
-                                                                        Radius.circular(
-                                                                            8.0),
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            8.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            8.0),
-                                                                  ),
-                                                                ),
-                                                                child: Align(
-                                                                  alignment:
-                                                                      const AlignmentDirectional(
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'Principal',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                          color:
-                                                                              const Color(0xFF170303),
-                                                                          fontSize:
-                                                                              12.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          fontWeight:
-                                                                              FontWeight.w600,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                        ),
+                                                                          .circular(
+                                                                              8.0),
+                                                                  child: Image
+                                                                      .asset(
+                                                                    'assets/images/Signature_Precy.png',
+                                                                    width:
+                                                                        300.0,
+                                                                    height:
+                                                                        80.0,
+                                                                    fit: BoxFit
+                                                                        .fill,
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ),
-                                                          ],
+                                                              const Spacer(flex: 3),
+                                                              Text(
+                                                                'Precila A. Quilang',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          14.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                    ),
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 180.0,
+                                                                  height: 18.0,
+                                                                  decoration:
+                                                                      const BoxDecoration(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    borderRadius:
+                                                                        BorderRadius
+                                                                            .only(
+                                                                      bottomLeft:
+                                                                          Radius.circular(
+                                                                              8.0),
+                                                                      bottomRight:
+                                                                          Radius.circular(
+                                                                              8.0),
+                                                                      topLeft: Radius
+                                                                          .circular(
+                                                                              8.0),
+                                                                      topRight:
+                                                                          Radius.circular(
+                                                                              8.0),
+                                                                    ),
+                                                                  ),
+                                                                  child: Align(
+                                                                    alignment:
+                                                                        const AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      'Principal',
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                            color:
+                                                                                const Color(0xFF170303),
+                                                                            fontSize:
+                                                                                12.0,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
                                                         ),
-                                                      ),
-                                                    ],
+                                                      ],
+                                                    ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ],

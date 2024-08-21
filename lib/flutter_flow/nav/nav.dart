@@ -96,19 +96,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const QrCodeWidget(),
         ),
         FFRoute(
-          name: 'auth_3_Create',
-          path: '/auth3Create',
-          builder: (context, params) => const Auth3CreateWidget(),
+          name: 'authCreate',
+          path: '/authCreate',
+          builder: (context, params) => const AuthCreateWidget(),
         ),
         FFRoute(
-          name: 'auth_3_Login',
-          path: '/auth3Login',
-          builder: (context, params) => const Auth3LoginWidget(),
+          name: 'Login',
+          path: '/login',
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
-          name: 'auth_3_ForgotPassword',
-          path: '/auth3ForgotPassword',
-          builder: (context, params) => const Auth3ForgotPasswordWidget(),
+          name: 'ForgotPassword',
+          path: '/forgotPassword',
+          builder: (context, params) => const ForgotPasswordWidget(),
         ),
         FFRoute(
           name: 'GeneratedID',
@@ -157,9 +157,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const SuccessUpdateWidget(),
         ),
         FFRoute(
-          name: 'CreateAnnouncement',
-          path: '/createAnnouncement',
-          builder: (context, params) => const CreateAnnouncementWidget(),
+          name: 'terms',
+          path: '/terms',
+          builder: (context, params) => const TermsWidget(),
         ),
         FFRoute(
           name: 'ListStudents',
@@ -167,9 +167,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ListStudentsWidget(),
         ),
         FFRoute(
-          name: 'terms',
-          path: '/terms',
-          builder: (context, params) => const TermsWidget(),
+          name: 'createPost',
+          path: '/createPost',
+          builder: (context, params) => const CreatePostWidget(),
+        ),
+        FFRoute(
+          name: 'MainHome',
+          path: '/mainHome',
+          builder: (context, params) => const MainHomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

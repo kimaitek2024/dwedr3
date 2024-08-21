@@ -90,6 +90,11 @@ class UsersRecord extends FirestoreRecord {
   bool get updated => _updated ?? false;
   bool hasUpdated() => _updated != null;
 
+  // "grade_average" field.
+  int? _gradeAverage;
+  int get gradeAverage => _gradeAverage ?? 0;
+  bool hasGradeAverage() => _gradeAverage != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -106,6 +111,7 @@ class UsersRecord extends FirestoreRecord {
     _gradelevel = snapshotData['gradelevel'] as String?;
     _unreadNotiff = castToType<int>(snapshotData['unread_notiff']);
     _updated = snapshotData['updated'] as bool?;
+    _gradeAverage = castToType<int>(snapshotData['grade_average']);
   }
 
   static CollectionReference get collection =>
@@ -157,6 +163,7 @@ Map<String, dynamic> createUsersRecordData({
   String? gradelevel,
   int? unreadNotiff,
   bool? updated,
+  int? gradeAverage,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -175,6 +182,7 @@ Map<String, dynamic> createUsersRecordData({
       'gradelevel': gradelevel,
       'unread_notiff': unreadNotiff,
       'updated': updated,
+      'grade_average': gradeAverage,
     }.withoutNulls,
   );
 
@@ -200,7 +208,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.subscribed == e2?.subscribed &&
         e1?.gradelevel == e2?.gradelevel &&
         e1?.unreadNotiff == e2?.unreadNotiff &&
-        e1?.updated == e2?.updated;
+        e1?.updated == e2?.updated &&
+        e1?.gradeAverage == e2?.gradeAverage;
   }
 
   @override
@@ -219,7 +228,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.subscribed,
         e?.gradelevel,
         e?.unreadNotiff,
-        e?.updated
+        e?.updated,
+        e?.gradeAverage
       ]);
 
   @override

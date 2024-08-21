@@ -269,7 +269,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('auth_3_Create');
+                            context.pushNamed('authCreate');
                           },
                           text: 'Create Account',
                           options: FFButtonOptions(
@@ -312,7 +312,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                             const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('auth_3_Login');
+                            context.pushNamed('Login');
                           },
                           text: 'Login',
                           options: FFButtonOptions(

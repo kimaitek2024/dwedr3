@@ -36,23 +36,19 @@ class _TermsWidgetState extends State<TermsWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF161643),
-        body: SafeArea(
-          top: true,
-          child: Container(
+        body: Container(
+          width: MediaQuery.sizeOf(context).width * 1.0,
+          height: MediaQuery.sizeOf(context).height * 1.0,
+          decoration: BoxDecoration(
+            color: FlutterFlowTheme.of(context).secondaryBackground,
+          ),
+          child: FlutterFlowWebView(
+            content: 'https://aitek.site/aanp/terms.html',
+            bypass: false,
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
-            ),
-            child: FlutterFlowWebView(
-              content: 'https://aitek.site/aanp/terms.html',
-              bypass: false,
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              height: MediaQuery.sizeOf(context).height * 1.0,
-              verticalScroll: false,
-              horizontalScroll: false,
-            ),
+            verticalScroll: true,
+            horizontalScroll: false,
           ),
         ),
       ),

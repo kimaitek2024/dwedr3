@@ -9,19 +9,19 @@ import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'auth3_create_model.dart';
-export 'auth3_create_model.dart';
+import 'auth_create_model.dart';
+export 'auth_create_model.dart';
 
-class Auth3CreateWidget extends StatefulWidget {
-  const Auth3CreateWidget({super.key});
+class AuthCreateWidget extends StatefulWidget {
+  const AuthCreateWidget({super.key});
 
   @override
-  State<Auth3CreateWidget> createState() => _Auth3CreateWidgetState();
+  State<AuthCreateWidget> createState() => _AuthCreateWidgetState();
 }
 
-class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
+class _AuthCreateWidgetState extends State<AuthCreateWidget>
     with TickerProviderStateMixin {
-  late Auth3CreateModel _model;
+  late AuthCreateModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -30,7 +30,7 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Auth3CreateModel());
+    _model = createModel(context, () => AuthCreateModel());
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -900,7 +900,7 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'auth_3_Login',
+                                      'Login',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,

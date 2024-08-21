@@ -903,7 +903,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               await Future.delayed(
                                   const Duration(milliseconds: 3000));
 
-                              context.pushNamed('GeneratedID');
+                              context.pushNamed('successUpdate');
                             },
                             text: 'Save Changes',
                             options: FFButtonOptions(
