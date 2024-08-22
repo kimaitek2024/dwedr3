@@ -18,6 +18,5 @@ export '/pages/terms/terms_widget.dart' show TermsWidget;
 export '/pages/create_post/create_post_widget.dart' show CreatePostWidget;
 export '/pages/list_students/list_students_widget.dart' show ListStudentsWidget;
 export '/pages/generated_i_d/generated_i_d_widget.dart' show GeneratedIDWidget;
-export '/scan_i_n_n/scan_i_n_n_widget.dart' show ScanINNWidget;
 export '/scanner/scanner_widget.dart' show ScannerWidget;
 export '/scan_q_r/scan_q_r_widget.dart' show ScanQRWidget;

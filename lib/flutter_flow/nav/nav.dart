@@ -172,11 +172,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const GeneratedIDWidget(),
         ),
         FFRoute(
-          name: 'ScanINN',
-          path: '/scanINN',
-          builder: (context, params) => const ScanINNWidget(),
-        ),
-        FFRoute(
           name: 'Scanner',
           path: '/scanner',
           builder: (context, params) => const ScannerWidget(),

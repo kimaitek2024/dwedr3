@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ScannerModel extends FlutterFlowModel<ScannerWidget> {
   ///  State fields for stateful widgets in this page.
 
-  var attendabnceSCannerQR = '';
+  var scanQRCODE = '';
 
   @override
   void initState(BuildContext context) {}
