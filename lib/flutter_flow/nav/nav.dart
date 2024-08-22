@@ -170,6 +170,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? const NavBarPage(initialPage: 'GeneratedID')
               : const GeneratedIDWidget(),
+        ),
+        FFRoute(
+          name: 'ScanINN',
+          path: '/scanINN',
+          builder: (context, params) => const ScanINNWidget(),
+        ),
+        FFRoute(
+          name: 'Scanner',
+          path: '/scanner',
+          builder: (context, params) => const ScannerWidget(),
+        ),
+        FFRoute(
+          name: 'ScanQR',
+          path: '/scanQR',
+          builder: (context, params) => const ScanQRWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_media_display.dart';
@@ -620,35 +621,40 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                           shape:
                                                               BoxShape.circle,
                                                         ),
-                                                        child: Padding(
-                                                          padding:
-                                                              const EdgeInsets.all(
-                                                                  8.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              await listViewUserPostRecord
-                                                                  .reference
-                                                                  .delete();
-                                                            },
-                                                            child: ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          24.0),
-                                                              child:
-                                                                  Image.network(
-                                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/a-a-n-p-school-p2tmql/assets/6z8knfizggbk/111111.png',
-                                                                fit: BoxFit
-                                                                    .cover,
+                                                        child: Visibility(
+                                                          visible:
+                                                              currentUserEmail ==
+                                                                  'admin@aanp.site',
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsets.all(
+                                                                    8.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                await listViewUserPostRecord
+                                                                    .reference
+                                                                    .delete();
+                                                              },
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            24.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/a-a-n-p-school-p2tmql/assets/6z8knfizggbk/111111.png',
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                ),
                                                               ),
                                                             ),
                                                           ),
