@@ -63,12 +63,12 @@ class _ListStudentsWidgetState extends State<ListStudentsWidget> {
                     color: FlutterFlowTheme.of(context).secondaryText,
                     size: 24.0,
                   ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
+                  onPressed: () async {
+                    context.safePop();
                   },
                 ),
                 title: Text(
-                  'All Students',
+                  'All Students of AANP',
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
                         fontFamily:
                             FlutterFlowTheme.of(context).headlineSmallFamily,
@@ -160,25 +160,21 @@ class _ListStudentsWidgetState extends State<ListStudentsWidget> {
                             _model.textControllerValidator.asValidator(context),
                       ),
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                      child: FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 30.0,
-                        borderWidth: 1.0,
-                        buttonSize: 44.0,
-                        icon: Icon(
-                          Icons.search_rounded,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 24.0,
-                        ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
-                        },
-                      ),
-                    ),
                   ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                child: Text(
+                  'Model Students for the Month of September 2024',
+                  style: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).labelMediumFamily),
+                      ),
                 ),
               ),
               Container(
@@ -257,7 +253,10 @@ class _ListStudentsWidgetState extends State<ListStudentsWidget> {
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(50.0),
                                     child: Image.network(
-                                      listViewUsersRecord.photoUrl,
+                                      valueOrDefault<String>(
+                                        listViewUsersRecord.photoUrl,
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/a-a-n-p-school-p2tmql/assets/mv41o3vtpkoi/77b00327-24a0-49ce-9d9e-85473543b19e.jpeg',
+                                      ),
                                       width: 60.0,
                                       height: 60.0,
                                       fit: BoxFit.cover,
@@ -268,6 +267,7 @@ class _ListStudentsWidgetState extends State<ListStudentsWidget> {
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Text(
                                       listViewUsersRecord.displayName,
+                                      textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -316,7 +316,7 @@ class _ListStudentsWidgetState extends State<ListStudentsWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                 child: Text(
-                  'Add Students',
+                  'All Students',
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily:
                             FlutterFlowTheme.of(context).labelMediumFamily,
@@ -388,7 +388,10 @@ class _ListStudentsWidgetState extends State<ListStudentsWidget> {
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(26.0),
                                     child: Image.network(
-                                      listViewUsersRecord.photoUrl,
+                                      valueOrDefault<String>(
+                                        listViewUsersRecord.photoUrl,
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/a-a-n-p-school-p2tmql/assets/mv41o3vtpkoi/77b00327-24a0-49ce-9d9e-85473543b19e.jpeg',
+                                      ),
                                       width: 36.0,
                                       height: 36.0,
                                       fit: BoxFit.cover,
@@ -431,7 +434,7 @@ class _ListStudentsWidgetState extends State<ListStudentsWidget> {
                                                     .fromSTEB(
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'user@domainname.com',
+                                                  'ID ${listViewUsersRecord.idNumber.toString()}',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -457,25 +460,8 @@ class _ListStudentsWidgetState extends State<ListStudentsWidget> {
                                     ),
                                   ),
                                   FFButtonWidget(
-                                    onPressed: () async {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'On Development',
-                                            style: TextStyle(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
-                                          ),
-                                          duration:
-                                              const Duration(milliseconds: 4000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondary,
-                                        ),
-                                      );
+                                    onPressed: () {
+                                      print('Button pressed ...');
                                     },
                                     text: 'View',
                                     options: FFButtonOptions(
