@@ -491,7 +491,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      context.pushNamed('Scanner');
+                      context.pushNamed('ScanQR');
                     },
                     child: Container(
                       width: double.infinity,
@@ -517,7 +517,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Icon(
-                              Icons.class_sharp,
+                              Icons.qr_code_scanner_outlined,
                               color: FlutterFlowTheme.of(context).secondaryText,
                               size: 24.0,
                             ),
@@ -526,7 +526,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'Share',
+                                  'QR Scanner',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(

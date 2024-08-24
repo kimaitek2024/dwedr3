@@ -172,14 +172,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const GeneratedIDWidget(),
         ),
         FFRoute(
-          name: 'Scanner',
-          path: '/scanner',
-          builder: (context, params) => const ScannerWidget(),
-        ),
-        FFRoute(
           name: 'ScanQR',
           path: '/scanQR',
           builder: (context, params) => const ScanQRWidget(),
+        ),
+        FFRoute(
+          name: 'Notif',
+          path: '/notif',
+          builder: (context, params) => const NotifWidget(),
+        ),
+        FFRoute(
+          name: 'QRscannerAttendance',
+          path: '/qRscannerAttendance',
+          builder: (context, params) => const QRscannerAttendanceWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
