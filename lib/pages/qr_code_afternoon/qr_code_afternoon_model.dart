@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'q_rscanner_attendance_widget.dart' show QRscannerAttendanceWidget;
+import 'qr_code_afternoon_widget.dart' show QrCodeAfternoonWidget;
 import 'package:flutter/material.dart';
 
-class QRscannerAttendanceModel
-    extends FlutterFlowModel<QRscannerAttendanceWidget> {
+class QrCodeAfternoonModel extends FlutterFlowModel<QrCodeAfternoonWidget> {
   @override
   void initState(BuildContext context) {}
 

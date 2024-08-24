@@ -182,9 +182,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const NotifWidget(),
         ),
         FFRoute(
-          name: 'QRscannerAttendance',
-          path: '/qRscannerAttendance',
-          builder: (context, params) => const QRscannerAttendanceWidget(),
+          name: 'QrCodeAfternoon',
+          path: '/qrCodeAfternoon',
+          builder: (context, params) => const QrCodeAfternoonWidget(),
+        ),
+        FFRoute(
+          name: 'onTime',
+          path: '/onTime',
+          builder: (context, params) => const OnTimeWidget(),
+        ),
+        FFRoute(
+          name: 'NotonTime',
+          path: '/notonTime',
+          builder: (context, params) => const NotonTimeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

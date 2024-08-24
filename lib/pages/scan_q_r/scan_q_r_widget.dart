@@ -1,7 +1,7 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/actions/index.dart' as actions;
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -44,6 +44,9 @@ class _ScanQRWidgetState extends State<ScanQRWidget> {
             message: _model.scanningQR,
           ),
           notificationsRecordReference);
+      await Future.delayed(const Duration(milliseconds: 3000));
+
+      context.pushNamed('onTime');
     });
   }
 
@@ -87,19 +90,10 @@ class _ScanQRWidgetState extends State<ScanQRWidget> {
                         color: const Color(0x49666666),
                       ),
                     ),
-                    child: InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        await actions.startQRScanning();
-                      },
-                      child: Icon(
-                        Icons.qr_code_scanner_sharp,
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        size: 150.0,
-                      ),
+                    child: Icon(
+                      Icons.qr_code_scanner_sharp,
+                      color: FlutterFlowTheme.of(context).secondaryText,
+                      size: 150.0,
                     ),
                   ),
                 ],
@@ -139,7 +133,7 @@ class _ScanQRWidgetState extends State<ScanQRWidget> {
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 6.0),
-                            child: Text(
+                            child: AutoSizeText(
                               columnNotificationsRecord.message,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium

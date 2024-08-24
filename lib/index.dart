@@ -20,5 +20,7 @@ export '/pages/list_students/list_students_widget.dart' show ListStudentsWidget;
 export '/pages/generated_i_d/generated_i_d_widget.dart' show GeneratedIDWidget;
 export '/pages/scan_q_r/scan_q_r_widget.dart' show ScanQRWidget;
 export '/pages/notif/notif_widget.dart' show NotifWidget;
-export '/pages/q_rscanner_attendance/q_rscanner_attendance_widget.dart'
-    show QRscannerAttendanceWidget;
+export '/pages/qr_code_afternoon/qr_code_afternoon_widget.dart'
+    show QrCodeAfternoonWidget;
+export '/pages/on_time/on_time_widget.dart' show OnTimeWidget;
+export '/pages/noton_time/noton_time_widget.dart' show NotonTimeWidget;

@@ -5,25 +5,25 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'qr_code_model.dart';
-export 'qr_code_model.dart';
+import 'qr_code_afternoon_model.dart';
+export 'qr_code_afternoon_model.dart';
 
-class QrCodeWidget extends StatefulWidget {
-  const QrCodeWidget({super.key});
+class QrCodeAfternoonWidget extends StatefulWidget {
+  const QrCodeAfternoonWidget({super.key});
 
   @override
-  State<QrCodeWidget> createState() => _QrCodeWidgetState();
+  State<QrCodeAfternoonWidget> createState() => _QrCodeAfternoonWidgetState();
 }
 
-class _QrCodeWidgetState extends State<QrCodeWidget> {
-  late QrCodeModel _model;
+class _QrCodeAfternoonWidgetState extends State<QrCodeAfternoonWidget> {
+  late QrCodeAfternoonModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => QrCodeModel());
+    _model = createModel(context, () => QrCodeAfternoonModel());
   }
 
   @override
@@ -178,7 +178,7 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                           child: AuthUserStreamWidget(
                             builder: (context) => BarcodeWidget(
                               data:
-                                  'Morning Time In: $currentUserDisplayName with ID # ${valueOrDefault(currentUserDocument?.idNumber, 0).toString()}, just entered AANP School Premises! at exactly ${dateTimeFormat(
+                                  'Afternoon Time In: $currentUserDisplayName  & ID ${valueOrDefault(currentUserDocument?.idNumber, 0).toString()}, just entered AANP School Premises! at exactly ${dateTimeFormat(
                                 "M/d H:mm",
                                 getCurrentTimestamp,
                                 locale:
@@ -223,7 +223,7 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                               24.0, 0.0, 24.0, 0.0),
                           iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
+                          color: FlutterFlowTheme.of(context).success,
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
@@ -268,7 +268,7 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                               24.0, 0.0, 24.0, 0.0),
                           iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).success,
+                          color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
