@@ -6,6 +6,7 @@ import 'package:just_audio/just_audio.dart';
 class OnTimeModel extends FlutterFlowModel<OnTimeWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   AudioPlayer? soundPlayer;
 
   @override

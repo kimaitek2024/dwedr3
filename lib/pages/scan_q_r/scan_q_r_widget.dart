@@ -87,12 +87,12 @@ class _ScanQRWidgetState extends State<ScanQRWidget> {
                         topRight: Radius.circular(4.0),
                       ),
                       border: Border.all(
-                        color: const Color(0x49666666),
+                        color: const Color(0xDC666666),
                       ),
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.qr_code_scanner_sharp,
-                      color: FlutterFlowTheme.of(context).secondaryText,
+                      color: Color(0x97666666),
                       size: 150.0,
                     ),
                   ),

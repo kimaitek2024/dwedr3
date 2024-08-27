@@ -35,7 +35,9 @@ class _OnTimeWidgetState extends State<OnTimeWidget> {
               'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/a-a-n-p-school-p2tmql/assets/iz5y7kqtwkd2/timing.mp3')
           .then((_) => _model.soundPlayer!.play());
 
-      context.pushNamed('QrCode');
+      await Future.delayed(const Duration(milliseconds: 7000));
+
+      context.pushNamed('ScanQR');
     });
   }
 

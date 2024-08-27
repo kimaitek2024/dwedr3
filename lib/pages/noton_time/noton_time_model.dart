@@ -6,6 +6,7 @@ import 'package:just_audio/just_audio.dart';
 class NotonTimeModel extends FlutterFlowModel<NotonTimeWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   AudioPlayer? soundPlayer;
 
   @override

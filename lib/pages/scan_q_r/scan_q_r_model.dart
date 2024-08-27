@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class ScanQRModel extends FlutterFlowModel<ScanQRWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   var scanningQR = '';
   // Stores action output result for [Backend Call - Create Document] action in ScanQR widget.
   NotificationsRecord? scannedMessage;

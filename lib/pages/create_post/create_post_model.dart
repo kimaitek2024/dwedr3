@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class CreatePostModel extends FlutterFlowModel<CreatePostWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));

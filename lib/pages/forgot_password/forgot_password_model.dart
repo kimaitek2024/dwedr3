@@ -7,6 +7,7 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 class ForgotPasswordModel extends FlutterFlowModel<ForgotPasswordWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for logoacademy component.
   late LogoacademyModel logoacademyModel;
   // State field(s) for email widget.

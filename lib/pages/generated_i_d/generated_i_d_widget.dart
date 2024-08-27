@@ -299,7 +299,7 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                                             .fromSTEB(0.0, 30.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'ADVANCED ACADEMY OF\nNORTHERN PHILIPPINES',
+                                                      'ADVANCED ACADEMY OF\nNORTHERN PHILIPPINES INC.',
                                                       textAlign:
                                                           TextAlign.justify,
                                                       style:
@@ -664,41 +664,33 @@ class _GeneratedIDWidgetState extends State<GeneratedIDWidget> {
                                                       ),
                                                       shape: BoxShape.rectangle,
                                                     ),
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  4.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child:
-                                                          AuthUserStreamWidget(
-                                                        builder: (context) =>
-                                                            Text(
-                                                          'ID ${valueOrDefault(currentUserDocument?.idNumber, 0).toString()}',
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                fontSize: 12.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
-                                                              ),
-                                                        ),
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          Text(
+                                                        'ID ${valueOrDefault(currentUserDocument?.idNumber, 0).toString()}',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  fontSize:
+                                                                      12.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
                                                       ),
                                                     ),
                                                   ),
